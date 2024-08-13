@@ -1,0 +1,5 @@
+*** Settings ***
+Library     AppiumLibrary
+Resource    Resources/Keywords/Common.robot
+Resource    Resources/Locators/Locators.robot
+Resource    Resources/Variables/Variables_Common.robot

@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.4 on win32)" generated="2024-08-14T01:09:47.769570" rpa="false" schemaversion="5">
+<suite id="s1" name="F Todo List App" source="G:\appium_test\TesCases\F_Todo_List_App.robot">
+<test id="s1-t1" name="TC_Todo_List_App_001" line="5">
+<kw name="Open Application Android" owner="Common">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${remote_url}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${deviceName}</arg>
+<arg>platformVersion=${platformVersion}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appActivity}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-08-14T01:09:47.950575" elapsed="10.771274"/>
+</kw>
+<status status="PASS" start="2024-08-14T01:09:47.950575" elapsed="10.771274"/>
+</kw>
+<kw name="Verfy Display Element" owner="Common">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<arg>accessibility_id=Todo List</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:09:58.721849" elapsed="0.939887"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:00.078746" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:09:59.661736" elapsed="0.417010"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:00.106910" level="INFO">xpath criteria: //android.widget.Button</msg>
+<arg>xpath=//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:00.079777" elapsed="0.027133"/>
+</kw>
+<status status="PASS" start="2024-08-14T01:09:58.721849" elapsed="1.385061"/>
+</kw>
+<kw name="Tap Input Text" owner="Common">
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:00.107907" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:00.336906" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:00.107907" elapsed="0.228999"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:01.479685" level="INFO">criteria is android:id/navigationBarBackground
+criteria is android:id/navigationBarBackground</msg>
+<arg>id=android:id/navigationBarBackground</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:00.337932" elapsed="1.141753"/>
+</kw>
+<msg time="2024-08-14T01:10:01.479685" level="INFO">${status_bar} = True</msg>
+<var>${status_bar}</var>
+<arg>Wait Until Page Does Not Contain Element</arg>
+<arg>id=android:id/navigationBarBackground</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:00.336906" elapsed="1.142779"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status_bar}' == 'True' and '${count_input}'=='1'">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:01.480672" level="INFO">Typing text 'Test_add1' into text field 'xpath=//android.widget.EditText'</msg>
+<msg time="2024-08-14T01:10:01.525739" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add1</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-08-14T01:10:01.479685" elapsed="0.047038"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:01.526723" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:02.858755" level="INFO">xpath criteria: //android.widget.Button</msg>
+<arg>xpath=//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:01.526723" elapsed="1.332032"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:03.574917" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add1"]
+xpath criteria: //android.view.View[@content-desc="Test_add1"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add1"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:02.858755" elapsed="0.716162"/>
+</kw>
+<status status="PASS" start="2024-08-14T01:10:01.479685" elapsed="2.095232"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Input Text" owner="AppiumLibrary">
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add${i}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:03.575915" elapsed="0.000000"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:03.575915" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<arg>xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:03.575915" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${status_list}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:03.576919" elapsed="0.000000"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2024-08-14T01:10:03.575915" elapsed="0.001004"/>
+</iter>
+<var>${i}</var>
+<value>${count_input}</value>
+<status status="NOT RUN" start="2024-08-14T01:10:03.574917" elapsed="0.002002"/>
+</for>
+<status status="NOT RUN" start="2024-08-14T01:10:03.574917" elapsed="0.002002"/>
+</branch>
+<status status="PASS" start="2024-08-14T01:10:01.479685" elapsed="2.097234"/>
+</if>
+<status status="PASS" start="2024-08-14T01:10:00.107907" elapsed="3.469012"/>
+</kw>
+<kw name="Tap CheckBox And Delete" owner="Common">
+<if>
+<branch type="IF" condition="'${type_del}'=='1'">
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:03.577909" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:04.309045" level="INFO">xpath criteria: //android.widget.CheckBox</msg>
+<arg>xpath=${CheckBox}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:03.577909" elapsed="0.732133"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:04.339550" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add1"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add1"]//android.widget.Button</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:04.310042" elapsed="0.029508"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:04.340559" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:04.540679" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add1"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add1"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:04.340559" elapsed="0.200120"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:05.105482" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add1"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add1"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:04.540679" elapsed="0.564803"/>
+</kw>
+<status status="PASS" start="2024-08-14T01:10:03.577909" elapsed="1.527573"/>
+</branch>
+<branch type="ELSE IF" condition="'${type_del}'=='ALL'">
+<kw name="Get Matching Xpath Count" owner="AppiumLibrary">
+<var>${checkbox_count}</var>
+<arg>xpath=${CheckBox}</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:05.105482" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:05.105482" elapsed="0.000000"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:05.105482" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:05.105482" elapsed="0.000997"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:05.106479" elapsed="0.000000"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2024-08-14T01:10:05.105482" elapsed="0.000997"/>
+</iter>
+<var>${i}</var>
+<value>${checkbox_count}</value>
+<status status="NOT RUN" start="2024-08-14T01:10:05.105482" elapsed="0.000997"/>
+</for>
+<status status="NOT RUN" start="2024-08-14T01:10:05.105482" elapsed="0.000997"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:05.106479" elapsed="0.000000"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:05.106479" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:05.106479" elapsed="0.000997"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:05.107476" elapsed="0.000000"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2024-08-14T01:10:05.106479" elapsed="0.000997"/>
+</iter>
+<var>${i}</var>
+<value>${type_del}</value>
+<status status="NOT RUN" start="2024-08-14T01:10:05.106479" elapsed="0.000997"/>
+</for>
+<kw name="Get Matching Xpath Count" owner="AppiumLibrary">
+<var>${checkbox_count}</var>
+<arg>xpath=${CheckBox}</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:05.107476" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-08-14T01:10:05.106479" elapsed="0.000997"/>
+</branch>
+<status status="PASS" start="2024-08-14T01:10:03.577909" elapsed="1.529567"/>
+</if>
+<status status="PASS" start="2024-08-14T01:10:03.576919" elapsed="1.530557"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2024-08-14T01:10:05.108473" elapsed="0.377184"/>
+</kw>
+<doc>*** Test Step ***
+Set Config Open Application
+Verfy Display Element
+Tap Input Text
+Tap CheckBox And Delete
+ *** Test Description ***
+ input list app 1
+ Verify list app input
+ Delete list app 1
+ Verify Delete app</doc>
+<status status="PASS" start="2024-08-14T01:09:47.949578" elapsed="17.536079"/>
+</test>
+<test id="s1-t2" name="TC_Todo_List_App_002" line="22">
+<kw name="Open Application Android" owner="Common">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${remote_url}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${deviceName}</arg>
+<arg>platformVersion=${platformVersion}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appActivity}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-08-14T01:10:05.487653" elapsed="10.567253"/>
+</kw>
+<status status="PASS" start="2024-08-14T01:10:05.487653" elapsed="10.567253"/>
+</kw>
+<kw name="Verfy Display Element" owner="Common">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<arg>accessibility_id=Todo List</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:16.055208" elapsed="0.865484"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:17.295674" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:16.920692" elapsed="0.374982"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:17.320445" level="INFO">xpath criteria: //android.widget.Button</msg>
+<arg>xpath=//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:17.295674" elapsed="0.024771"/>
+</kw>
+<status status="PASS" start="2024-08-14T01:10:16.055208" elapsed="1.265237"/>
+</kw>
+<kw name="Tap Input Text" owner="Common">
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:17.321442" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:17.536654" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:17.321442" elapsed="0.215212"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:18.704928" level="INFO">criteria is android:id/navigationBarBackground
+criteria is android:id/navigationBarBackground</msg>
+<arg>id=android:id/navigationBarBackground</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:17.536654" elapsed="1.168274"/>
+</kw>
+<msg time="2024-08-14T01:10:18.704928" level="INFO">${status_bar} = True</msg>
+<var>${status_bar}</var>
+<arg>Wait Until Page Does Not Contain Element</arg>
+<arg>id=android:id/navigationBarBackground</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:17.536654" elapsed="1.168274"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status_bar}' == 'True' and '${count_input}'=='1'">
+<kw name="Input Text" owner="AppiumLibrary">
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add1</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:18.704928" elapsed="0.000000"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:18.704928" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<arg>xpath=//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:18.704928" elapsed="0.001035"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<arg>xpath=//android.view.View[@content-desc="Test_add1"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:18.705963" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-08-14T01:10:18.704928" elapsed="0.001035"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:18.707948" level="INFO">Typing text 'Test_add0' into text field 'xpath=//android.widget.EditText'</msg>
+<msg time="2024-08-14T01:10:18.756328" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add${i}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-08-14T01:10:18.706945" elapsed="0.049383"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:18.757337" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:19.471612" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</msg>
+<arg>xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:18.757337" elapsed="0.715269"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:20.137193" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add0"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:19.472606" elapsed="0.664587"/>
+</kw>
+<msg time="2024-08-14T01:10:20.137193" level="INFO">${status_list} = True</msg>
+<var>${status_list}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:19.472606" elapsed="0.664587"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-08-14T01:10:18.706945" elapsed="1.430248"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:20.139189" level="INFO">Typing text 'Test_add1' into text field 'xpath=//android.widget.EditText'</msg>
+<msg time="2024-08-14T01:10:20.180491" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add${i}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-08-14T01:10:20.137193" elapsed="0.043298"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:20.180491" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:21.442555" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</msg>
+<arg>xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:20.180491" elapsed="1.262064"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:21.475759" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add1"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:21.443587" elapsed="0.032172"/>
+</kw>
+<msg time="2024-08-14T01:10:21.475759" level="INFO">${status_list} = True</msg>
+<var>${status_list}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:21.442555" elapsed="0.033204"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-08-14T01:10:20.137193" elapsed="1.338566"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:21.476780" level="INFO">Typing text 'Test_add2' into text field 'xpath=//android.widget.EditText'</msg>
+<msg time="2024-08-14T01:10:21.520952" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add${i}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-08-14T01:10:21.475759" elapsed="0.045193"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:21.520952" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:22.733910" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</msg>
+<arg>xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:21.520952" elapsed="1.213956"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:22.768213" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add2"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:22.734908" elapsed="0.033305"/>
+</kw>
+<msg time="2024-08-14T01:10:22.768213" level="INFO">${status_list} = True</msg>
+<var>${status_list}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:22.734908" elapsed="0.033305"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-08-14T01:10:21.475759" elapsed="1.292454"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:22.769202" level="INFO">Typing text 'Test_add3' into text field 'xpath=//android.widget.EditText'</msg>
+<msg time="2024-08-14T01:10:22.815618" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add${i}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-08-14T01:10:22.768213" elapsed="0.047405"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:22.815618" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:24.035020" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</msg>
+<arg>xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:22.815618" elapsed="1.219402"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:24.078642" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add3"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:24.035020" elapsed="0.043622"/>
+</kw>
+<msg time="2024-08-14T01:10:24.078642" level="INFO">${status_list} = True</msg>
+<var>${status_list}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:24.035020" elapsed="0.043622"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2024-08-14T01:10:22.768213" elapsed="1.310429"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:24.080665" level="INFO">Typing text 'Test_add4' into text field 'xpath=//android.widget.EditText'</msg>
+<msg time="2024-08-14T01:10:24.125872" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add${i}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-08-14T01:10:24.079638" elapsed="0.046234"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:24.125872" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:25.353614" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</msg>
+<arg>xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:24.125872" elapsed="1.227742"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:25.386631" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add4"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:25.354638" elapsed="0.031993"/>
+</kw>
+<msg time="2024-08-14T01:10:25.386631" level="INFO">${status_list} = True</msg>
+<var>${status_list}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:25.353614" elapsed="0.033017"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2024-08-14T01:10:24.078642" elapsed="1.307989"/>
+</iter>
+<var>${i}</var>
+<value>${count_input}</value>
+<status status="PASS" start="2024-08-14T01:10:18.705963" elapsed="6.680668"/>
+</for>
+<status status="PASS" start="2024-08-14T01:10:18.705963" elapsed="6.680668"/>
+</branch>
+<status status="PASS" start="2024-08-14T01:10:18.704928" elapsed="6.681703"/>
+</if>
+<arg>5</arg>
+<status status="PASS" start="2024-08-14T01:10:17.321442" elapsed="8.065189"/>
+</kw>
+<kw name="Tap CheckBox And Delete" owner="Common">
+<if>
+<branch type="IF" condition="'${type_del}'=='1'">
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:25.387628" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<arg>xpath=${CheckBox}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:25.387628" elapsed="0.000998"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<arg>xpath=//android.view.View[@content-desc="Test_add1"]//android.widget.Button</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:25.388626" elapsed="0.000000"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:25.388626" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add1"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:25.388626" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<arg>xpath=//android.view.View[@content-desc="Test_add1"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:25.389623" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-08-14T01:10:25.387628" elapsed="0.001995"/>
+</branch>
+<branch type="ELSE IF" condition="'${type_del}'=='ALL'">
+<kw name="Get Matching Xpath Count" owner="AppiumLibrary">
+<var>${checkbox_count}</var>
+<arg>xpath=${CheckBox}</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:25.389623" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:25.389623" elapsed="0.000000"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:25.389623" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:25.389623" elapsed="0.000737"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:25.390360" elapsed="0.000000"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2024-08-14T01:10:25.389623" elapsed="0.000737"/>
+</iter>
+<var>${i}</var>
+<value>${checkbox_count}</value>
+<status status="NOT RUN" start="2024-08-14T01:10:25.389623" elapsed="0.000737"/>
+</for>
+<status status="NOT RUN" start="2024-08-14T01:10:25.389623" elapsed="0.000737"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:25.423982" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add0"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:25.390360" elapsed="0.033622"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:25.423982" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:25.620173" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add0"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:25.423982" elapsed="0.196191"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:26.205650" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add0"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:25.621169" elapsed="0.584481"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-08-14T01:10:25.390360" elapsed="0.815290"/>
+</iter>
+<iter>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:26.241602" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add1"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:26.205650" elapsed="0.035952"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:26.242596" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:26.987751" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add1"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:26.242596" elapsed="0.745155"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:27.016876" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add1"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:26.988739" elapsed="0.028137"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-08-14T01:10:26.205650" elapsed="0.811226"/>
+</iter>
+<var>${i}</var>
+<value>${type_del}</value>
+<status status="PASS" start="2024-08-14T01:10:25.390360" elapsed="1.626516"/>
+</for>
+<kw name="Get Matching Xpath Count" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:27.048521" level="INFO">xpath criteria: //android.widget.CheckBox</msg>
+<msg time="2024-08-14T01:10:27.048521" level="INFO">${checkbox_count} = 3</msg>
+<var>${checkbox_count}</var>
+<arg>xpath=${CheckBox}</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<status status="PASS" start="2024-08-14T01:10:27.016876" elapsed="0.031645"/>
+</kw>
+<status status="PASS" start="2024-08-14T01:10:25.390360" elapsed="1.658161"/>
+</branch>
+<status status="PASS" start="2024-08-14T01:10:25.387628" elapsed="1.660893"/>
+</if>
+<arg>2</arg>
+<status status="PASS" start="2024-08-14T01:10:25.387628" elapsed="1.660893"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2024-08-14T01:10:27.048521" elapsed="0.364139"/>
+</kw>
+<doc>*** Test Step ***
+Set Config Open Application
+Verfy Display Element
+Tap Input Text
+Tap CheckBox And Delete
+ *** Test Description ***
+ input list app 5
+ Verify list app input
+ Delete list app 2
+ Verify Delete app and count list app 3</doc>
+<status status="PASS" start="2024-08-14T01:10:05.486653" elapsed="21.926007"/>
+</test>
+<test id="s1-t3" name="TC_Todo_List_App_003" line="39">
+<kw name="Open Application Android" owner="Common">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${remote_url}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${deviceName}</arg>
+<arg>platformVersion=${platformVersion}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appActivity}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-08-14T01:10:27.414968" elapsed="12.132753"/>
+</kw>
+<status status="PASS" start="2024-08-14T01:10:27.414968" elapsed="12.132753"/>
+</kw>
+<kw name="Verfy Display Element" owner="Common">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<arg>accessibility_id=Todo List</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:39.548719" elapsed="0.920898"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:40.873638" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:40.469617" elapsed="0.404021"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:40.902591" level="INFO">xpath criteria: //android.widget.Button</msg>
+<arg>xpath=//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:40.873638" elapsed="0.028953"/>
+</kw>
+<status status="PASS" start="2024-08-14T01:10:39.548719" elapsed="1.353872"/>
+</kw>
+<kw name="Tap Input Text" owner="Common">
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:40.903265" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:41.124913" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:40.903265" elapsed="0.221648"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:42.319786" level="INFO">criteria is android:id/navigationBarBackground
+criteria is android:id/navigationBarBackground</msg>
+<arg>id=android:id/navigationBarBackground</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:41.124913" elapsed="1.194873"/>
+</kw>
+<msg time="2024-08-14T01:10:42.319786" level="INFO">${status_bar} = True</msg>
+<var>${status_bar}</var>
+<arg>Wait Until Page Does Not Contain Element</arg>
+<arg>id=android:id/navigationBarBackground</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:41.124913" elapsed="1.194873"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status_bar}' == 'True' and '${count_input}'=='1'">
+<kw name="Input Text" owner="AppiumLibrary">
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add1</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:42.319786" elapsed="0.000000"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:42.319786" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<arg>xpath=//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:42.319786" elapsed="0.001000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<arg>xpath=//android.view.View[@content-desc="Test_add1"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:42.320786" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-08-14T01:10:42.319786" elapsed="0.001000"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:42.322803" level="INFO">Typing text 'Test_add0' into text field 'xpath=//android.widget.EditText'</msg>
+<msg time="2024-08-14T01:10:42.375881" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add${i}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-08-14T01:10:42.321781" elapsed="0.054100"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:42.375881" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:43.733707" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</msg>
+<arg>xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:42.375881" elapsed="1.357826"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:43.761548" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add0"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:43.734727" elapsed="0.026821"/>
+</kw>
+<msg time="2024-08-14T01:10:43.761548" level="INFO">${status_list} = True</msg>
+<var>${status_list}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:43.733707" elapsed="0.027841"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-08-14T01:10:42.321781" elapsed="1.440348"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:43.763417" level="INFO">Typing text 'Test_add1' into text field 'xpath=//android.widget.EditText'</msg>
+<msg time="2024-08-14T01:10:43.803995" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add${i}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-08-14T01:10:43.762129" elapsed="0.041866"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:43.803995" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:45.041163" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</msg>
+<arg>xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:43.803995" elapsed="1.237168"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:45.074824" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add1"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:45.041163" elapsed="0.033661"/>
+</kw>
+<msg time="2024-08-14T01:10:45.074824" level="INFO">${status_list} = True</msg>
+<var>${status_list}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:45.041163" elapsed="0.033661"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-08-14T01:10:43.762129" elapsed="1.313693"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:45.076819" level="INFO">Typing text 'Test_add2' into text field 'xpath=//android.widget.EditText'</msg>
+<msg time="2024-08-14T01:10:45.121817" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add${i}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-08-14T01:10:45.075822" elapsed="0.045995"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:45.121817" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:46.363704" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</msg>
+<arg>xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:45.121817" elapsed="1.241887"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:46.401376" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add2"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:46.364702" elapsed="0.037671"/>
+</kw>
+<msg time="2024-08-14T01:10:46.402373" level="INFO">${status_list} = True</msg>
+<var>${status_list}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:46.363704" elapsed="0.038669"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-08-14T01:10:45.075822" elapsed="1.326551"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:46.404033" level="INFO">Typing text 'Test_add3' into text field 'xpath=//android.widget.EditText'</msg>
+<msg time="2024-08-14T01:10:46.451034" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add${i}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-08-14T01:10:46.402373" elapsed="0.048661"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:46.452051" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:47.670577" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</msg>
+<arg>xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:46.451034" elapsed="1.219543"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:47.701394" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add3"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:47.671574" elapsed="0.029820"/>
+</kw>
+<msg time="2024-08-14T01:10:47.701394" level="INFO">${status_list} = True</msg>
+<var>${status_list}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:47.671574" elapsed="0.029820"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2024-08-14T01:10:46.402373" elapsed="1.299021"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:47.702986" level="INFO">Typing text 'Test_add4' into text field 'xpath=//android.widget.EditText'</msg>
+<msg time="2024-08-14T01:10:47.756865" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add${i}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-08-14T01:10:47.701394" elapsed="0.055471"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:47.756865" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:49.405734" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</msg>
+<arg>xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:47.756865" elapsed="1.648869"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:49.452825" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add4"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:49.405734" elapsed="0.047091"/>
+</kw>
+<msg time="2024-08-14T01:10:49.452825" level="INFO">${status_list} = True</msg>
+<var>${status_list}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:49.405734" elapsed="0.047091"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2024-08-14T01:10:47.701394" elapsed="1.751431"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:49.453617" level="INFO">Typing text 'Test_add5' into text field 'xpath=//android.widget.EditText'</msg>
+<msg time="2024-08-14T01:10:49.498211" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add${i}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-08-14T01:10:49.452825" elapsed="0.045386"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:49.499208" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:50.738929" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</msg>
+<arg>xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:49.499208" elapsed="1.239721"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:50.772041" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add5"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:50.739926" elapsed="0.032115"/>
+</kw>
+<msg time="2024-08-14T01:10:50.772041" level="INFO">${status_list} = True</msg>
+<var>${status_list}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:50.739926" elapsed="0.032115"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2024-08-14T01:10:49.452825" elapsed="1.319216"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:50.773597" level="INFO">Typing text 'Test_add6' into text field 'xpath=//android.widget.EditText'</msg>
+<msg time="2024-08-14T01:10:50.820421" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add${i}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-08-14T01:10:50.772605" elapsed="0.047816"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:50.821419" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:52.078641" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</msg>
+<arg>xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:50.821419" elapsed="1.257222"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:52.111153" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add6"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:52.078641" elapsed="0.032512"/>
+</kw>
+<msg time="2024-08-14T01:10:52.111153" level="INFO">${status_list} = True</msg>
+<var>${status_list}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:52.078641" elapsed="0.032512"/>
+</kw>
+<var name="${i}">6</var>
+<status status="PASS" start="2024-08-14T01:10:50.772605" elapsed="1.338548"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:52.112132" level="INFO">Typing text 'Test_add7' into text field 'xpath=//android.widget.EditText'</msg>
+<msg time="2024-08-14T01:10:52.155001" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>xpath=${Text_input}</arg>
+<arg>Test_add${i}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-08-14T01:10:52.112132" elapsed="0.042869"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:52.155001" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:53.391316" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</msg>
+<arg>xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:52.155001" elapsed="1.236315"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:53.423749" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add7"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:53.391316" elapsed="0.032433"/>
+</kw>
+<msg time="2024-08-14T01:10:53.423749" level="INFO">${status_list} = True</msg>
+<var>${status_list}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-14T01:10:53.391316" elapsed="0.032433"/>
+</kw>
+<var name="${i}">7</var>
+<status status="PASS" start="2024-08-14T01:10:52.111153" elapsed="1.312596"/>
+</iter>
+<var>${i}</var>
+<value>${count_input}</value>
+<status status="PASS" start="2024-08-14T01:10:42.320786" elapsed="11.102963"/>
+</for>
+<status status="PASS" start="2024-08-14T01:10:42.320786" elapsed="11.102963"/>
+</branch>
+<status status="PASS" start="2024-08-14T01:10:42.319786" elapsed="11.103963"/>
+</if>
+<arg>8</arg>
+<status status="PASS" start="2024-08-14T01:10:40.903265" elapsed="12.520484"/>
+</kw>
+<kw name="Tap CheckBox And Delete" owner="Common">
+<if>
+<branch type="IF" condition="'${type_del}'=='1'">
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:53.424744" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<arg>xpath=${CheckBox}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:53.424744" elapsed="0.000997"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<arg>xpath=//android.view.View[@content-desc="Test_add1"]//android.widget.Button</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:53.425741" elapsed="0.000000"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:53.425741" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add1"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:53.425741" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<arg>xpath=//android.view.View[@content-desc="Test_add1"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="NOT RUN" start="2024-08-14T01:10:53.425741" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-08-14T01:10:53.424744" elapsed="0.001994"/>
+</branch>
+<branch type="ELSE IF" condition="'${type_del}'=='ALL'">
+<kw name="Get Matching Xpath Count" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:53.463563" level="INFO">xpath criteria: //android.widget.CheckBox</msg>
+<msg time="2024-08-14T01:10:53.463563" level="INFO">${checkbox_count} = 8</msg>
+<var>${checkbox_count}</var>
+<arg>xpath=${CheckBox}</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<status status="PASS" start="2024-08-14T01:10:53.426738" elapsed="0.036825"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:53.508728" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add0"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:53.463563" elapsed="0.045165"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:53.508728" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:54.272663" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add0"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:53.508728" elapsed="0.763935"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:54.313877" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add0"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:54.272663" elapsed="0.041214"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-08-14T01:10:53.463563" elapsed="0.850314"/>
+</iter>
+<iter>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:54.359287" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add1"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:54.314901" elapsed="0.044386"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:54.359287" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:55.109142" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add1"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:54.359287" elapsed="0.749855"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:55.141079" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add1"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:55.109142" elapsed="0.032934"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-08-14T01:10:54.314901" elapsed="0.827175"/>
+</iter>
+<iter>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:55.186713" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add2"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:55.142076" elapsed="0.044637"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:55.187710" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:55.965719" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add2"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:55.187710" elapsed="0.778009"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:55.993798" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add2"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:55.965719" elapsed="0.028079"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-08-14T01:10:55.142076" elapsed="0.851722"/>
+</iter>
+<iter>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:56.023801" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add3"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:55.994800" elapsed="0.029001"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:56.024798" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:56.774886" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add3"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:56.024798" elapsed="0.750088"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:56.808419" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add3"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:56.774886" elapsed="0.033533"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2024-08-14T01:10:55.994800" elapsed="0.813619"/>
+</iter>
+<iter>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:56.853380" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add4"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:56.808419" elapsed="0.044961"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:56.853380" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:57.600101" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add4"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:56.853380" elapsed="0.746721"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:57.631956" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add4"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:57.600101" elapsed="0.031855"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2024-08-14T01:10:56.808419" elapsed="0.823537"/>
+</iter>
+<iter>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:57.660711" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add5"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:57.631956" elapsed="0.028755"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:57.660711" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:58.385876" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add5"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:57.660711" elapsed="0.725165"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:58.417542" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add5"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:58.385876" elapsed="0.031666"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2024-08-14T01:10:57.631956" elapsed="0.785586"/>
+</iter>
+<iter>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:58.448693" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add6"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:58.417542" elapsed="0.031151"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:58.449690" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:59.226740" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add6"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:58.449690" elapsed="0.777050"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:59.267349" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add6"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:59.226740" elapsed="0.041605"/>
+</kw>
+<var name="${i}">6</var>
+<status status="PASS" start="2024-08-14T01:10:58.417542" elapsed="0.850803"/>
+</iter>
+<iter>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:59.305693" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add7"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2024-08-14T01:10:59.268345" elapsed="0.038345"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:10:59.306690" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:11:00.047847" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add7"]//android.widget.Button</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2024-08-14T01:10:59.306690" elapsed="0.741157"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<msg time="2024-08-14T01:11:00.069643" level="INFO">xpath criteria: //android.view.View[@content-desc="Test_add7"]</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="PASS" start="2024-08-14T01:11:00.048829" elapsed="0.020814"/>
+</kw>
+<var name="${i}">7</var>
+<status status="PASS" start="2024-08-14T01:10:59.268345" elapsed="0.801298"/>
+</iter>
+<var>${i}</var>
+<value>${checkbox_count}</value>
+<status status="PASS" start="2024-08-14T01:10:53.463563" elapsed="6.606080"/>
+</for>
+<status status="PASS" start="2024-08-14T01:10:53.426738" elapsed="6.642905"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" start="2024-08-14T01:11:00.070643" elapsed="0.000000"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2024-08-14T01:11:00.070643" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]//android.widget.Button</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="NOT RUN" start="2024-08-14T01:11:00.070643" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="AppiumLibrary">
+<arg>xpath=//android.view.View[@content-desc="Test_add${i}"]</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<status status="NOT RUN" start="2024-08-14T01:11:00.070643" elapsed="0.000000"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2024-08-14T01:11:00.070643" elapsed="0.000000"/>
+</iter>
+<var>${i}</var>
+<value>${type_del}</value>
+<status status="NOT RUN" start="2024-08-14T01:11:00.070643" elapsed="0.000996"/>
+</for>
+<kw name="Get Matching Xpath Count" owner="AppiumLibrary">
+<var>${checkbox_count}</var>
+<arg>xpath=${CheckBox}</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<status status="NOT RUN" start="2024-08-14T01:11:00.071639" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-08-14T01:11:00.070643" elapsed="0.000996"/>
+</branch>
+<status status="PASS" start="2024-08-14T01:10:53.424744" elapsed="6.646895"/>
+</if>
+<arg>ALL</arg>
+<status status="PASS" start="2024-08-14T01:10:53.424744" elapsed="6.646895"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2024-08-14T01:11:00.071639" elapsed="0.406281"/>
+</kw>
+<doc>*** Test Step ***
+Set Config Open Application
+Verfy Display Element
+Tap Input Text
+Tap CheckBox And Delete
+ *** Test Description ***
+ input list app 10
+ Verify list app input
+ Delete list app All
+ Verify Delete app</doc>
+<status status="PASS" start="2024-08-14T01:10:27.413977" elapsed="33.063943"/>
+</test>
+<status status="PASS" start="2024-08-14T01:09:47.771570" elapsed="72.707347"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="F Todo List App">F Todo List App</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-08-14T01:10:00.107907" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:01.526723" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:03.575915" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:03.577909" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:04.340559" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:05.105482" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:05.106479" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:17.321442" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:18.704928" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:18.757337" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:20.180491" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:21.520952" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:22.815618" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:24.125872" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:25.387628" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:25.388626" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:25.389623" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:25.423982" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:26.242596" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:40.903265" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:42.319786" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:42.375881" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:43.803995" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:45.121817" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:46.452051" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:47.756865" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:49.499208" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:50.821419" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:52.155001" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:53.424744" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:53.425741" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:53.508728" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:54.359287" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:55.187710" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:56.024798" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:56.853380" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:57.660711" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:58.449690" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:10:59.306690" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2024-08-14T01:11:00.070643" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+</errors>
+</robot>
